@@ -23,6 +23,9 @@ listint_t *insert_node(listint_t **head, int number)
 	new = malloc(sizeof(listint_t));
 	new->n = number;
 
+	if (!new)
+		return (NULL);
+
 	/* Traverse the list until we find a lesser value or the end */
 	while (srch->next != NULL)
 	{
