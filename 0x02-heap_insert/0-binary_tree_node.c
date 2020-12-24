@@ -1,6 +1,5 @@
-#include <stdlib.h>
 #include "binary_trees.h"
-#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * binary_tree_node - Creates a new node assigned to the given parent
@@ -18,6 +17,8 @@ binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 
 	new_node->parent = parent;
 	new_node->n = value;
+	new_node->left = NULL;
+	new_node->right = NULL;
 
 	return (new_node);
 }
