@@ -5,17 +5,17 @@
 def minOperations(n):
     """ Finds the smallest amount of operations """
     ops = 0
-    max_div = n - 1
+    temp = n - 1
+    max = 0
     """ Find max value you can divide N by """
-    while (max_div > 1):
+    if (n <= 0):
+        return 0
 
-        if (n % max_div == 0):
-            ops = n / max_div
-            n = max_div
-            break
+    while (n > 3):
+        if (n % temp == 0):
+            ops += n / temp
+            n = n / temp
+        else:
+            temp -= 1
 
-        max_div = max_div - 1
-
-    ops = ops + (n - 1)
-
-    return ops
+    return ops + temp
