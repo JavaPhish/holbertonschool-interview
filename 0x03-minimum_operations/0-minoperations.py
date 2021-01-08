@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Min operations """
 
+
 def minOperations(n):
     """ Finds the smallest amount of operations """
     ops = 0
