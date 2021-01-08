@@ -11,7 +11,6 @@ def minOperations(n):
     if (n <= 0):
         return 0
 
-
     while (n > 3):
         if (n % temp == 0):
             ops += n / temp
