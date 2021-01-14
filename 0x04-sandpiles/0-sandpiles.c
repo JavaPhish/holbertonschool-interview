@@ -85,6 +85,7 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
  *
  * Return: 1 on true, 0 otherwise
  */
+
 int isSolved(int grid[3][3])
 {
 	int x, y;
