@@ -3,8 +3,6 @@
 
 #include "sandpiles.h"
 
-void print_grid(int grid[3][3]);
-
 /**
  * sandpiles_sum - S
  * @grid1: Left 3x3 grid
@@ -23,7 +21,7 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 		}
 	}
 	printf("=\n");
-	print_grid(grid1);
+	printGrid(grid1);
 	while (isSolved(grid1) == 0)
 	{
 		if (grid1[1][1] > 3)
@@ -76,7 +74,7 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 		}
 		printf("=\n");
 
-		print_grid(grid1);
+		printGrid(grid1);
 	}
 
 }
@@ -106,11 +104,11 @@ int isSolved(int grid[3][3])
 }
 
 /**
- * print_grid - Print 3x3 grid
+ * printGrid - Print 3x3 grid
  * @grid: 3x3 grid
  *
  */
-void print_grid(int grid[3][3])
+void printGrid(int grid[3][3])
 {
 int i, j;
 
