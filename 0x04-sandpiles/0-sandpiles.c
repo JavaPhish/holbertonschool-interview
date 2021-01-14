@@ -20,8 +20,7 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 			grid1[x][y] = grid1[x][y] + grid2[x][y];
 		}
 	}
-	printf("=\n");
-	printGrid(grid1);
+
 	while (isSolved(grid1) == 0)
 	{
 		if (grid1[1][1] > 3)
