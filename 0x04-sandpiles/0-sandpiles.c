@@ -3,7 +3,7 @@
 
 #include "sandpiles.h"
 
-static void print_grid(int grid[3][3]);
+void print_grid(int grid[3][3]);
 
 /**
  * sandpiles_sum - S
@@ -110,7 +110,7 @@ int isSolved(int grid[3][3])
  * @grid: 3x3 grid
  *
  */
-static void print_grid(int grid[3][3])
+void print_grid(int grid[3][3])
 {
 int i, j;
 
