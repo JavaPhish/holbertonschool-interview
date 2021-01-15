@@ -13,69 +13,41 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 {
 	int x, y;
 
+	/* First add two grids together */
 	for (x = 0; x < 3; x++)
 	{
 		for (y = 0; y < 3; y++)
 		{
 			grid1[x][y] = grid1[x][y] + grid2[x][y];
+			grid2[x][y] = grid1[x][y];
 		}
 	}
-
 	while (isSolved(grid1) == 0)
 	{
-		if (grid1[1][1] > 3)
-		{
-			grid1[1][1] -= 4;
-			grid1[1][2] += 1, grid1[2][1] += 1, grid1[0][1] += 1, grid1[1][0] += 1;
-		}
-		/*mids*/
-		if (grid1[1][2] > 3)
-		{
-			grid1[1][2] -= 4;
-			grid1[1][1] += 1, grid1[2][2] += 1, grid1[0][2] += 1;
-		}
-		if (grid1[2][1] > 3)
-		{
-			grid1[2][1] -= 4;
-			grid1[2][0] += 1, grid1[1][1] += 1, grid1[2][2] += 1;
-		}
-		if (grid1[0][1] > 3)
-		{
-			grid1[0][1] -= 4;
-			grid1[0][0] += 1, grid1[0][2] += 1, grid1[1][1] += 1;
-		}
-		if (grid1[1][0] > 3)
-		{
-			grid1[1][0] -= 4;
-			grid1[0][0] += 1, grid1[1][1] += 1, grid1[2][0] += 1;
-		}
-
-		/* corners */
-		if (grid1[0][2] > 3)
-		{
-			grid1[0][2] -= 4;
-			grid1[0][1] += 1, grid1[1][2] += 1;
-		}
-		if (grid1[2][2] > 3)
-		{
-			grid1[2][2] -= 4;
-			grid1[2][1] += 1, grid1[1][2] += 1;
-		}
-		if (grid1[0][0] > 3)
-		{
-			grid1[0][0] -= 4;
-			grid1[0][1] += 1, grid1[1][0] += 1;
-		}
-		if (grid1[2][0] > 3)
-		{
-			grid1[2][0] -= 4;
-			grid1[1][0] += 1, grid1[2][1] += 1;
-		}
 		printf("=\n");
-
 		printGrid(grid1);
+		for (x = 0; x < 3; x++)
+		{
+			for (y = 0; y < 3; y++)
+			{
+				if (grid1[x][y] > 3)
+				{
+					grid2[x][y] -= 4;
+					if (y + 1 < 3)
+						grid2[x][y + 1] += 1;
+					if (x - 1 >= 0)
+						grid2[x - 1][y] += 1;
+					if (x + 1 < 3)
+						grid2[x + 1][y] += 1;
+					if (y - 1 >= 0)
+						grid2[x][y - 1] += 1;
+				}
+			}
+		}
+		for (x = 0; x < 3; x++)
+			for (y = 0; y < 3; y++)
+				grid1[x][y] = grid2[x][y];
 	}
-
 }
 
 /**
@@ -84,7 +56,6 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
  *
  * Return: 1 on true, 0 otherwise
  */
-
 int isSolved(int grid[3][3])
 {
 	int x, y;
