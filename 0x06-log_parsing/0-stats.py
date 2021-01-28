@@ -38,7 +38,6 @@ try:
             for key in sorted(s_codes.keys()):
                 if (s_codes[key] != 0):
                     print("{}: {}".format(key, s_codes[key]))
-                    s_codes[key] = 0
             r_lines = 0
 
 except KeyboardInterrupt:
@@ -46,3 +45,4 @@ except KeyboardInterrupt:
     for key in sorted(s_codes.keys()):
         if (s_codes[key] != 0):
             print("{}: {}".format(key, s_codes[key]))
+        r_lines = 0
