@@ -57,4 +57,3 @@ try:
 
 except KeyboardInterrupt:
     print_data()
-    raise
