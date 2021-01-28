@@ -49,7 +49,7 @@ try:
 
         """ increase line count """
         r_lines += 1
-        if (r_lines == 9):
+        if (r_lines > 9):
             print_data()
             r_lines = 0
 
