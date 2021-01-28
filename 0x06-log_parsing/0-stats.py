@@ -36,7 +36,7 @@ try:
 
         """ increase line count """
         r_lines += 1
-        if (r_lines == 9):
+        if (r_lines == 10):
             print("File size: {}".format(t_file_size))
             for key in sorted(s_codes.keys()):
                 if (s_codes[key] != 0):
@@ -49,3 +49,4 @@ except KeyboardInterrupt:
         if (s_codes[key] != 0):
             print("{}: {}".format(key, s_codes[key]))
         r_lines = 0
+    raise
