@@ -11,6 +11,9 @@ void menger(int level)
 {
 	int x, j, dim = 1, fract;
 
+	if (level < 0)
+		return;
+
 	for (x = 0; x < level; x++)
 		dim *= 3;
 
