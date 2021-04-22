@@ -36,17 +36,17 @@ void heap_sort(int *array, size_t size)
  * Return: Nothing
  *
  */
-void sift_down(int *array, int heap_len, int start, int len)
+void sift_down(int *array, int heap_len, unsigned int start, int len)
 {
-	int swap, left, right, max = start;
+	unsigned int swap, left, right, max = start;
 
 	left = 2 * start + 1;
 	right = 2 * start + 2;
 
-	if (left < heap_len && array[left] > array[max])
+	if (left < (unsigned int)heap_len && array[left] > array[max])
 		max = left;
 
-	if (heap_len > right && array[right] > array[max])
+	if ((unsigned int)heap_len > right && array[right] > array[max])
 		max = right;
 
 	if (max != start)
@@ -55,6 +55,6 @@ void sift_down(int *array, int heap_len, int start, int len)
 		array[start] = array[max];
 		array[max] = swap;
 		print_array(array, len);
-		sift_down(array, heap_len, start, max);
+		sift_down(array, heap_len,  max, len);
 	}
 }
