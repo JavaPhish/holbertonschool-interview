@@ -28,6 +28,9 @@ def count_words(subreddit, word_list=[], count={}, titles=[], counter=0):
         # Create list of titles from API call
         for d in api['data']['children']:
             for i in d['data']['title'].split(' '):
+                i.replace('.', '')
+                i.replace('!', '')
+                i.replace('_', '')
                 titles.append(i)
 
     # Checks if we've collected all word occurances and prints them if so
