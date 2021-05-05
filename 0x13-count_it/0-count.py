@@ -32,9 +32,10 @@ def count_words(subreddit, word_list=[], count={}, titles=[], counter=0):
 
     # Checks if we've collected all word occurances and prints them if so
     if (counter >= len(word_list)):
-        for c in sorted (count.keys()):
-            if (count[c] != 0):
-                print("{}: {}".format(c, count[c]))
+        count = sorted(count.items(), reverse=True)
+        for c in count:
+            if (c[1] != 0):
+                print("{}: {}".format(c[0], c[1]))
         return
 
     word = word_list[counter].lower()
