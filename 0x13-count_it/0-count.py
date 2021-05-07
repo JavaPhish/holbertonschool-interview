@@ -3,8 +3,8 @@
 Recursive Suffering
 """
 
-import requests
 import json
+import requests
 
 
 def make_match_list(subreddit):
