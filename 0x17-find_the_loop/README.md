@@ -1,0 +1,1 @@
+Detects the first node of a loop in a linked list
