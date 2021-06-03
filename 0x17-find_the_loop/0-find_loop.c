@@ -4,7 +4,7 @@
 #include "lists.h"
 
 /**
- * fine_listint_loop - Finds the starting node in a loop in a linked list
+ * find_listint_loop - Finds the starting node in a loop in a linked list
  * @head: The list to check
  *
  * Return: The node starting a loop
