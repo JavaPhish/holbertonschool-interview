@@ -19,7 +19,6 @@ List *add_node_end(List **list, char *str)
 	{
 		(*list) = malloc(sizeof(List));
 		(*list)->str = str;
-		printf("1\n");
 		return (*list);
 	}
 
