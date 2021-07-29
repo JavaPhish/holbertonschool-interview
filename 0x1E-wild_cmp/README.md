@@ -1,0 +1,1 @@
+Wild card algorithm
